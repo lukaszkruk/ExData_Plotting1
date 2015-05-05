@@ -1,5 +1,7 @@
 ### Submission for the Coursera Exploratory Data Analysis Project 1
 
-The scripts use the data.table package.
+The data.table package is used.
 
-The script assumes the downloaded zipped data is in the working directory. The script includes code for unzipping and loading the data file. 
+It is assumed the downloaded zipped data is in the working directory. 
+
+Code for unzipping and loading the data file is included. 
