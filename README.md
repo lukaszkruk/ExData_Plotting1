@@ -1,4 +1,4 @@
-# Submission for the Coursera Exploratory Data Analysis Project 1
+### Submission for the Coursera Exploratory Data Analysis Project 1
 
 The scripts use the data.table package.
 
