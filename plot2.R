@@ -1,5 +1,6 @@
 require(data.table)
 
+# setwd('D:/dokumenty/R WD/coursera courses/4 - exploratory data analysis/project 1')
 unzip('exdata-data-household_power_consumption.zip')
 
 # read data and assign column names
@@ -24,13 +25,9 @@ png(filename = "plot2.png",
 )
 
 plot(data$Datetime, data$Global_active_power, 
-	type = 'n',
+	type = 'l',
 	xlab = '',
 	ylab = 'Global Active Power (kilowatts)'
-)
-
-lines(data$Datetime, data$Global_active_power,
-	lwd = 1.5
 )
 
 dev.off()

@@ -1,5 +1,6 @@
 require(data.table)
 
+# setwd('D:/dokumenty/R WD/coursera courses/4 - exploratory data analysis/project 1')
 unzip('exdata-data-household_power_consumption.zip')
 
 # read data and assign column names

@@ -1,5 +1,6 @@
 require(data.table)
 
+# setwd('D:/dokumenty/R WD/coursera courses/4 - exploratory data analysis/project 1')
 unzip('exdata-data-household_power_consumption.zip')
 
 # read data and assign column names
@@ -17,8 +18,7 @@ data$Datetime <- as.POSIXct(
 	tz = 'UTC'
 )
 
-lwd = 1.5
-
+lwd = 1
 
 png(filename = "plot4.png",
 	width = 480, 
@@ -31,33 +31,26 @@ par(mfrow = c(2,2), mar = c(5, 5, 2, 2))
 #plot 1
 
 plot(data$Datetime, data$Global_active_power, 
-	type = 'n',
+	type = 'l',
 	xlab = '',
-	ylab = 'Global Active Power'
-)
-
-lines(data$Datetime, data$Global_active_power,
+	ylab = 'Global Active Power',
 	lwd = lwd
 )
 
 # plot 2
 
 plot(data$Datetime, data$Voltage, 
-	type = 'n',
+	type = 'l',
 	xlab = 'datetime',
 	ylab = 'Voltage'
 )
 
-lines(data$Datetime, data$Voltage)
-
 # plot 3
 
 plot(data$Datetime, data$Sub_metering_1, 
-	type = 'n',
+	type = 'l',
 	xlab = '',
-	ylab = 'Energy sub metering')
-
-lines(data$Datetime, data$Sub_metering_1,
+	ylab = 'Energy sub metering',
 	lwd = lwd,
 	col = 'black'
 )
@@ -76,20 +69,17 @@ legend('topright',
 	lwd = lwd,
 	col = c('black','red','blue'),
 	legend = c('Sub_metering_1','Sub_metering_2','Sub_metering_3'),
-	bty = 'n'
+	bty = 'n' # remove legend box
 )
 
 # plot 4
 
 plot(data$Datetime, data$Global_reactive_power, 
-	type = 'n',
+	type = 'l',
 	xlab = 'datetime',
-	ylab = 'Global_reactive_power'
-)
-
-lines(data$Datetime, data$Global_reactive_power,
-	lwd = lwd,
-	col = 'black'
+	ylab = 'Global_reactive_power',
+	col = 'black',
+	lwd = lwd
 )
 
 dev.off()

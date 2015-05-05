@@ -1,5 +1,6 @@
 require(data.table)
 
+# setwd('D:/dokumenty/R WD/coursera courses/4 - exploratory data analysis/project 1')
 unzip('exdata-data-household_power_consumption.zip')
 
 # read data and assign column names
@@ -26,11 +27,9 @@ png(filename = "plot3.png",
 )
 
 plot(data$Datetime, data$Sub_metering_1, 
-	type = 'n',
+	type = 'l',
 	xlab = '',
-	ylab = 'Energy sub metering')
-
-lines(data$Datetime, data$Sub_metering_1,
+	ylab = 'Energy sub metering',
 	lwd = lwd,
 	col = 'black'
 )
@@ -48,7 +47,8 @@ lines(data$Datetime, data$Sub_metering_3,
 legend('topright',
 	lwd = lwd,
 	col = c('black','red','blue'),
-	legend = c('Sub_metering_1','Sub_metering_2','Sub_metering_3')
+	legend = c('Sub_metering_1','Sub_metering_2','Sub_metering_3'),
+	bty = 'n' # remove legend box
 )
 
 dev.off()
